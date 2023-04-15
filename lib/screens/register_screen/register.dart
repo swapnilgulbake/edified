@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../constants/constants.dart';
 import '../home_screen.dart';
 
@@ -11,6 +11,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
+  late String name;
+  late int no;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,53 +59,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                  Image(image: AssetImage('images/signup.jpeg'),),
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: TextField(
+                      keyboardType: TextInputType.name,
+                      onChanged: (value) {
+                        name = value;
+                      },
+                      decoration: kInputDecoration.copyWith(
+                          hintText: 'Enter full name'),
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
-                  SingleChildScrollView(
-                    child: TextField(
-                      keyboardType: TextInputType.name,
-                      onChanged: (value) {},
-                      decoration:
-                      kInputDecoration.copyWith(hintText: 'Enter full name'),
-                    ),
-                  ),
-                  SizedBox(height: 10,),
-
                   TextField(
                     keyboardType: TextInputType.phone,
-                    onChanged: (value) {},
-                    decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter mobile number'),
+                    onChanged: (value) {
+                      no = int.parse(value);
+                    },
+                    decoration: kInputDecoration.copyWith(
+                        hintText: 'Enter mobile number'),
                   ),
-                  SizedBox(height: 10,),
-
+                  SizedBox(
+                    height: 10,
+                  ),
                   TextField(
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      email = value;
+                    },
                     decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter email'),
+                        kInputDecoration.copyWith(hintText: 'Enter email'),
                   ),
                   SizedBox(
                     height: 10.0,
                   ),
                   TextField(
                     obscureText: true,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      password = value;
+                    },
                     decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter password'),
+                        kInputDecoration.copyWith(hintText: 'Enter password'),
                   ),
                   SizedBox(
                     height: 15,
                   ),
-
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 16.0),
                     child: Material(
@@ -107,8 +114,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: Colors.white70,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, HomeScreen.id);
+                        onPressed: () async {
+                          try {
+                            final newUser =
+                                await _auth.createUserWithEmailAndPassword(
+                                    email: email, password: password);
+                            if (newUser != null) {
+                              Navigator.pushNamed(context, HomeScreen.id);
+                            }
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         minWidth: 300.0,
                         height: 42.0,

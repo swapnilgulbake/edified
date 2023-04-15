@@ -2,9 +2,15 @@ import 'package:edified/screens/home_screen.dart';
 import 'package:edified/screens/login_screen/login.dart';
 import 'package:edified/screens/register_screen/register.dart';
 import 'package:edified/screens/welcome_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'screens/empty_screen.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); // Initialize Firebase
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
@@ -18,6 +24,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        EmptyScreen.id: (context) => EmptyScreen(),
       },
     );
   }

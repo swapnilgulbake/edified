@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "517623248185",
-    "project_id": "edified-2ef8c",
-    "storage_bucket": "edified-2ef8c.appspot.com"
+    "project_number": "52283918918",
+    "project_id": "edified-8f50d",
+    "storage_bucket": "edified-8f50d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:517623248185:android:95c79f1c7583ba0ad664e8",
+        "mobilesdk_app_id": "1:52283918918:android:fe9f5f7de597349f15d847",
         "android_client_info": {
-          "package_name": "com.company.edified"
+          "package_name": "com.thedevs.edified"
         }
       },
       "oauth_client": [
         {
-          "client_id": "517623248185-pi9ldsl5kpf6ms3dqu6qha8p3rgrm090.apps.googleusercontent.com",
+          "client_id": "52283918918-nqh9c5tki9tqlgdld4s1anrb9o8s5ajl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAUP3SNzY096XkfgeeROY6hEspGefGOXoQ"
+          "current_key": "AIzaSyDAvAxQzj1uEzFpUvejYs9sfzk2aAus-eQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "517623248185-pi9ldsl5kpf6ms3dqu6qha8p3rgrm090.apps.googleusercontent.com",
+              "client_id": "52283918918-nqh9c5tki9tqlgdld4s1anrb9o8s5ajl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

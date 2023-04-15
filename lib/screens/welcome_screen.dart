@@ -1,7 +1,6 @@
 import 'package:edified/screens/login_screen/login.dart';
 import 'package:edified/screens/register_screen/register.dart';
 import 'package:flutter/material.dart';
-import 'package:edified/screens/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
@@ -29,30 +28,38 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 200,
-                  height: 200,
+                  width: 150,
+                  height: 150,
                   child: Image(
-                    image: AssetImage('images/LOGOO.jpeg'),
+                    image: AssetImage('images/newlogo.jpeg'),
                   ),
                 ),
                 //SizedBox(height: 1),
                 Text(
                   'EDIFIED',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: 'Pacifico',
-                  ),
+                      letterSpacing: 13,
+                      color: Colors.white,
+                      fontSize: 50,
+                      fontFamily: 'Oswald',
+                      fontWeight: FontWeight.w900),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 0.5,
                 ),
+
                 SizedBox(
                   width: 200,
                   child: Divider(
                     color: Colors.white60,
                     thickness: 2,
                   ),
+                ),
+
+                Text(
+                  'Education Modified',
+                  style: TextStyle(color: Colors.white60,
+                  fontSize: 15),
                 ),
                 SizedBox(
                   height: 25,

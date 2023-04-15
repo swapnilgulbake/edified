@@ -35,6 +35,13 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  firebase_core: ^2.9.0
+  firebase_auth: ^4.4.1
+  cloud_firestore: ^4.5.1
+  openai: ^1.0.0
+  http: ^0.13.3
+  html: ^0.15.2
+  universal_html: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +72,10 @@ flutter:
     - images/logo.jpeg
     - images/EDIFIED.jpeg
     - images/LOGOO.jpeg
+    - images/newlogo.jpeg
+    - images/login.jpeg
+    - images/signup.jpeg
+    - images/js.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -81,6 +92,12 @@ flutter:
     - family: Pacifico
       fonts:
         - asset: fonts/Pacifico-Regular.ttf
+    - family: Oswald
+      fonts:
+        - asset: fonts/Oswald-VariableFont_wght.ttf
+    - family: Sacramento
+      fonts:
+        - asset: fonts/Sacramento-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
