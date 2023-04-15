@@ -11,7 +11,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
@@ -60,45 +59,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  Image(image: AssetImage('images/signup.jpeg'),),
                   SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
                     child: TextField(
                       keyboardType: TextInputType.name,
                       onChanged: (value) {
                         name = value;
                       },
-                      decoration:
-                      kInputDecoration.copyWith(hintText: 'Enter full name'),
+                      decoration: kInputDecoration.copyWith(
+                          hintText: 'Enter full name'),
                     ),
                   ),
-                  SizedBox(height: 10,),
-
+                  SizedBox(
+                    height: 10,
+                  ),
                   TextField(
                     keyboardType: TextInputType.phone,
                     onChanged: (value) {
                       no = int.parse(value);
                     },
-                    decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter mobile number'),
+                    decoration: kInputDecoration.copyWith(
+                        hintText: 'Enter mobile number'),
                   ),
-                  SizedBox(height: 10,),
-
+                  SizedBox(
+                    height: 10,
+                  ),
                   TextField(
                     keyboardType: TextInputType.emailAddress,
                     onChanged: (value) {
                       email = value;
                     },
                     decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter email'),
+                        kInputDecoration.copyWith(hintText: 'Enter email'),
                   ),
                   SizedBox(
                     height: 10.0,
@@ -109,12 +102,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       password = value;
                     },
                     decoration:
-                    kInputDecoration.copyWith(hintText: 'Enter password'),
+                        kInputDecoration.copyWith(hintText: 'Enter password'),
                   ),
                   SizedBox(
                     height: 15,
                   ),
-
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 16.0),
                     child: Material(
@@ -123,13 +115,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
                         onPressed: () async {
-                          try{
-                            final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-                            if(newUser != null){
+                          try {
+                            final newUser =
+                                await _auth.createUserWithEmailAndPassword(
+                                    email: email, password: password);
+                            if (newUser != null) {
                               Navigator.pushNamed(context, HomeScreen.id);
                             }
-                          }
-                          catch(e){
+                          } catch (e) {
                             print(e);
                           }
                         },

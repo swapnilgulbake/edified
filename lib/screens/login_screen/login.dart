@@ -32,8 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Udified",
-                    style: TextStyle(fontSize: 30, color: Colors.white),
+                    "Edified",
+                    style: TextStyle(fontSize: 50, color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Sacramento'),
                   ),
                 ],
               ),
@@ -58,14 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Log In',
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w900,
-                      fontFamily: 'Oswald',
-                    ),
-                  ),
+                  Image(image: AssetImage('images/login.jpeg'),),
                   SizedBox(
                     height: 60,
                   ),

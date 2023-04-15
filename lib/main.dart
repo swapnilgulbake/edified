@@ -4,6 +4,7 @@ import 'package:edified/screens/register_screen/register.dart';
 import 'package:edified/screens/welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'screens/empty_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        ExptyScreen.id: (context) => ExptyScreen(),
       },
     );
   }

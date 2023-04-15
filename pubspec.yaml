@@ -68,6 +68,10 @@ flutter:
     - images/logo.jpeg
     - images/EDIFIED.jpeg
     - images/LOGOO.jpeg
+    - images/newlogo.jpeg
+    - images/login.jpeg
+    - images/signup.jpeg
+    - images/js.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -87,6 +91,9 @@ flutter:
     - family: Oswald
       fonts:
         - asset: fonts/Oswald-VariableFont_wght.ttf
+    - family: Sacramento
+      fonts:
+        - asset: fonts/Sacramento-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
