@@ -88,17 +88,22 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   TextButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, ExptyScreen.id);
+                    onPressed: () {
+                      Navigator.pushNamed(context, EmptyScreen.id);
                     },
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image(image: AssetImage('images/js.jpeg'),),
+                          Image(
+                            image: AssetImage('images/js.jpeg'),
+                          ),
                           Text(
                             'JavaScript',
-                            style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'Oswald'),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontFamily: 'Oswald'),
                           ),
                         ],
                       ),
@@ -111,63 +116,92 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 10,
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Python',
-                          style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'Oswald'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, EmptyScreen.id);
+                    },
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, EmptyScreen.id);
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Python',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontFamily: 'Oswald'),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    height: 300,
-                    width: 180,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF303030),
-                      borderRadius: BorderRadius.circular(20),
+                        height: 300,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF303030),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 10,
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'C++',
-                          style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'Oswald'),
-                        ),
-                      ],
-                    ),
-                    height: 300,
-                    width: 180,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF303030),
-                      borderRadius: BorderRadius.circular(20),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, EmptyScreen.id);
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'C++',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontFamily: 'Oswald'),
+                          ),
+                        ],
+                      ),
+                      height: 300,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF303030),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 10,
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Flutter',
-                          style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'Oswald'),
-                        ),
-                      ],
-                    ),
-                    height: 300,
-                    width: 180,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF303030),
-                      borderRadius: BorderRadius.circular(20),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, EmptyScreen.id);
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Flutter',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontFamily: 'Oswald'),
+                          ),
+                        ],
+                      ),
+                      height: 300,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF303030),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
                   ),
                 ],
@@ -190,7 +224,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Center(
                     child: Text(
                       'JavaScript',
-                      style: TextStyle(color: Colors.white70, fontSize: 25,fontFamily: 'Oswald'),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 25,
+                          fontFamily: 'Oswald'),
                     ),
                   ),
                   height: 80,
@@ -207,7 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Center(
                     child: Text(
                       'Python',
-                      style: TextStyle(color: Colors.white70, fontSize: 25,fontFamily: 'Oswald'),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 25,
+                          fontFamily: 'Oswald'),
                     ),
                   ),
                   height: 80,
@@ -224,7 +264,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Center(
                     child: Text(
                       'Flutter',
-                      style: TextStyle(color: Colors.white70, fontSize: 25,fontFamily: 'Oswald'),
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 25,
+                          fontFamily: 'Oswald'),
                     ),
                   ),
                   height: 80,

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
-        ExptyScreen.id: (context) => ExptyScreen(),
+        EmptyScreen.id: (context) => EmptyScreen(),
       },
     );
   }

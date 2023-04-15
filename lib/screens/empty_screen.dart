@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ExptyScreen extends StatelessWidget {
+class EmptyScreen extends StatelessWidget {
   static String id = 'empty_screen';
 
   @override
