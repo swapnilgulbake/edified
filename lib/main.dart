@@ -60,6 +60,7 @@ class _WelcomeState extends State<Welcome> {
                       thickness: 2,
                     ),
                   ),
+
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
