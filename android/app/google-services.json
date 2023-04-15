@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517623248185",
+    "project_id": "edified-2ef8c",
+    "storage_bucket": "edified-2ef8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517623248185:android:95c79f1c7583ba0ad664e8",
+        "android_client_info": {
+          "package_name": "com.company.edified"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517623248185-pi9ldsl5kpf6ms3dqu6qha8p3rgrm090.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUP3SNzY096XkfgeeROY6hEspGefGOXoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517623248185-pi9ldsl5kpf6ms3dqu6qha8p3rgrm090.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
