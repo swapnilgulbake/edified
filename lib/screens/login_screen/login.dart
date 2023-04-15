@@ -1,6 +1,7 @@
 import 'package:edified/constants/constants.dart';
 import 'package:flutter/material.dart';
 import '../home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_page';
@@ -10,6 +11,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextField(
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      email = value;
+                    },
                     decoration:
                         kInputDecoration.copyWith(hintText: 'Enter email'),
                   ),
@@ -74,7 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextField(
                     obscureText: true,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      password = value;
+                    },
                     decoration:
                         kInputDecoration.copyWith(hintText: 'Enter password'),
                   ),
@@ -88,8 +98,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.white70,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, HomeScreen.id);
+                        onPressed: () async {
+                          try{
+                            final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+                            if(user!=null){
+                              Navigator.pushNamed(context, HomeScreen.id);
+                            }
+                          }
+                          catch(e){
+                            print(e);
+                          }
                         },
                         minWidth: 300.0,
                         height: 42.0,
