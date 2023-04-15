@@ -37,11 +37,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 //SizedBox(height: 1),
                 Text(
-                  'EDIFIED',
+                  'E D I F I E D',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: 'Pacifico',
+                    fontSize: 40,
+                    fontFamily: 'Oswald',
+                    fontWeight: FontWeight.w900
                   ),
                 ),
                 SizedBox(

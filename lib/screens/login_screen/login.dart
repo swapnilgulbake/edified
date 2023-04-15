@@ -56,8 +56,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     'Log In',
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w900,
+                      fontFamily: 'Oswald',
                     ),
                   ),
                   SizedBox(
