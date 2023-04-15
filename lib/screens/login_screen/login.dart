@@ -1,6 +1,5 @@
 import 'package:edified/constants/constants.dart';
 import 'package:flutter/material.dart';
-
 import '../home_screen.dart';
 
 class LoginScreen extends StatefulWidget {

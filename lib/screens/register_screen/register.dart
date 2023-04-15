@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../constants/constants.dart';
 import '../home_screen.dart';
 
@@ -11,6 +11,13 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
+  late String name;
+  late int no;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +73,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SingleChildScrollView(
                     child: TextField(
                       keyboardType: TextInputType.name,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        name = value;
+                      },
                       decoration:
                       kInputDecoration.copyWith(hintText: 'Enter full name'),
                     ),
@@ -75,7 +84,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   TextField(
                     keyboardType: TextInputType.phone,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      no = int.parse(value);
+                    },
                     decoration:
                     kInputDecoration.copyWith(hintText: 'Enter mobile number'),
                   ),
@@ -83,7 +94,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   TextField(
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      email = value;
+                    },
                     decoration:
                     kInputDecoration.copyWith(hintText: 'Enter email'),
                   ),
@@ -92,7 +105,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   TextField(
                     obscureText: true,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      password = value;
+                    },
                     decoration:
                     kInputDecoration.copyWith(hintText: 'Enter password'),
                   ),
@@ -107,8 +122,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: Colors.white70,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, HomeScreen.id);
+                        onPressed: () async {
+                          try{
+                            final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                            if(newUser != null){
+                              Navigator.pushNamed(context, HomeScreen.id);
+                            }
+                          }
+                          catch(e){
+                            print(e);
+                          }
                         },
                         minWidth: 300.0,
                         height: 42.0,

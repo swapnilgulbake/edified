@@ -1,7 +1,6 @@
 import 'package:edified/screens/login_screen/login.dart';
 import 'package:edified/screens/register_screen/register.dart';
 import 'package:flutter/material.dart';
-import 'package:edified/screens/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
