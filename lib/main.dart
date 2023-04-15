@@ -1,4 +1,6 @@
 import 'package:edified/screens/home_screen.dart';
+import 'package:edified/screens/login_screen/login.dart';
+import 'package:edified/screens/register_screen/register.dart';
 import 'package:edified/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         HomeScreen.id: (context) => HomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
       },
     );
   }
