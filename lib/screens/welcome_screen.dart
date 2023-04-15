@@ -1,5 +1,6 @@
+import 'package:edified/screens/login_screen/login.dart';
+import 'package:edified/screens/register_screen/register.dart';
 import 'package:flutter/material.dart';
-import 'package:edified/screens/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
@@ -10,7 +11,6 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -20,23 +20,28 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.purple,
-                    Colors.deepPurple,
-                  ])),
+                Colors.purple,
+                Colors.deepPurple,
+              ])),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 50.0,
-                  backgroundImage: AssetImage('images/screenshot .jpeg'),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image(
+                    image: AssetImage('images/LOGOO.jpeg'),
+                  ),
                 ),
-                SizedBox(height: 15),
+                //SizedBox(height: 1),
                 Text(
-                  'EDIFIED',
+                  'E D I F I E D',
                   style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontFamily: 'Oswald',
+                    fontWeight: FontWeight.w900
                   ),
                 ),
                 SizedBox(
@@ -52,42 +57,42 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 SizedBox(
                   height: 25,
                 ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.white70,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, HomeScreen.id);
-                  },
-                  minWidth: 300.0,
-                  height: 42.0,
-                  child: Text(
-                    'LogIn',
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Material(
+                    elevation: 5.0,
+                    color: Colors.white70,
+                    borderRadius: BorderRadius.circular(30.0),
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, LoginScreen.id);
+                      },
+                      minWidth: 300.0,
+                      height: 42.0,
+                      child: Text(
+                        'Login',
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.white70,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, HomeScreen.id);
-                  },
-                  minWidth: 300.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Material(
+                    elevation: 5.0,
+                    color: Colors.white70,
+                    borderRadius: BorderRadius.circular(30.0),
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, SignUpScreen.id);
+                      },
+                      minWidth: 300.0,
+                      height: 42.0,
+                      child: Text(
+                        'Sign Up',
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
               ],
             ),
           ),
