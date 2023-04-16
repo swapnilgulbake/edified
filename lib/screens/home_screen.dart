@@ -1,3 +1,4 @@
+import 'package:edified/screens/register_screen/study_material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:edified/screens/empty_screen.dart';
@@ -5,12 +6,14 @@ import 'package:edified/screens/empty_screen.dart';
 class HomeScreen extends StatefulWidget {
   static String id = 'home_screen';
 
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   String _searchText = "";
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
@@ -331,7 +334,7 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Study Materials'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, StudyMaterial.id);
             },
           ),
           ListTile(
