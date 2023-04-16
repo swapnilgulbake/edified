@@ -1,3 +1,4 @@
+import 'package:edified/screens/Quiz/quiz_main.dart';
 import 'package:edified/screens/e_books.dart';
 import 'package:edified/screens/home_screen.dart';
 import 'package:edified/screens/login_screen/login.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         OnlineCourses.id: (context) => OnlineCourses(),
         Ebooks.id: (context) => Ebooks(),
         StudyMaterial.id: (context) => StudyMaterial(),
+        Quizpage.id: (context) => Quizpage(),
       },
     );
   }

@@ -1,7 +1,12 @@
+import 'package:edified/screens/e_books.dart';
+import 'package:edified/screens/online_courses.dart';
 import 'package:edified/screens/register_screen/study_material.dart';
+import 'package:edified/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:edified/screens/empty_screen.dart';
+
+import 'Quiz/quiz_main.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = 'home_screen';
@@ -46,7 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(''),
       ),
       drawer: MyDrawer(),
-      body: SingleChildScrollView(
+      body:
+      SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image(
-                            image: AssetImage('images/js.jpeg'),
+                            image: AssetImage('images/javascript.png'),
                           ),
                           Text(
                             'JavaScript',
@@ -121,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     width: 10,
                   ),
+
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, EmptyScreen.id);
@@ -133,6 +140,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            Image(
+                              image: AssetImage('images/python.png'),
+                            ),
                             Text(
                               'Python',
                               style: TextStyle(
@@ -162,6 +172,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Image(
+                            image: AssetImage('images/c++.png'),
+                          ),
                           Text(
                             'C++',
                             style: TextStyle(
@@ -190,6 +203,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Image(
+                            image: AssetImage('images/flutter.png'),
+                          ),
                           Text(
                             'Flutter',
                             style: TextStyle(
@@ -213,6 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 45,
             ),
+
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -285,6 +302,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.white70,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
@@ -304,43 +327,50 @@ class MyDrawer extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Colors.purple,
-                Colors.deepPurple,
+                Color(0xFF285430),
+                Color(0xFF285430),
               ],
             )),
-            child: Text(
-              'Drawer Header',
-              style: TextStyle(color: Colors.white),
+            child: Expanded(
+              child: Image(
+                image: AssetImage('images/lastlogo.png'),
+              ),
             ),
           ),
           ListTile(
-            title: const Text('Home'),
+            title: const Text('Home',style: TextStyle(fontSize: 22),),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text('Online Courses'),
+            title: const Text('Online Courses',style: TextStyle(fontSize: 22),),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, OnlineCourses.id);
             },
           ),
           ListTile(
-            title: const Text('e-books'),
+            title: const Text('e-books',style: TextStyle(fontSize: 22),),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, Ebooks.id);
             },
           ),
           ListTile(
-            title: const Text('Study Materials'),
+            title: const Text('Study Materials',style: TextStyle(fontSize: 22),),
             onTap: () {
               Navigator.pushNamed(context, StudyMaterial.id);
             },
           ),
           ListTile(
-            title: const Text('Sign out'),
+            title: const Text('Quiz',style: TextStyle(fontSize: 22),),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, Quizpage.id);
+            },
+          ),
+          ListTile(
+            title: const Text('Sign out',style: TextStyle(fontSize: 22),),
+            onTap: () {
+              Navigator.pushNamed(context, WelcomeScreen.id);
             },
           ),
         ],
