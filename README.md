@@ -19,7 +19,7 @@ The app is built using the Flutter framework for building the mobile app, Fireba
 
 Getting Started:
 
-To run this app, users need to have Flutter installed on their system. They can clone the repository using git clone https://github.com/your-username/edified.git, run flutter pub get in the project directory to install dependencies, connect their device or start the emulator, and run the app using flutter run.
+To run this app, users need to have Flutter installed on their system. They can clone the repository using git clone https://github.com/Shubhm1243/edified.git, run flutter pub get in the project directory to install dependencies, connect their device or start the emulator, and run the app using flutter run.
 
 Contribution Guidelines:
 
